@@ -1,0 +1,31 @@
+<div *ngIf="isSuccess; else error" class="container">
+    <h1 class="mt-5">Trams departing from Mårtensdal heading towards Gullmarsplan</h1>
+<div class=" row mt-5">
+<table class="table  table-striped">
+
+      <tbody>
+        <ng-container *ngFor="let tram of tramsToWardGullmarsplan; let i = index">
+        <tr>
+          <th scope="row">{{i+1}}</th>
+          <td colspan="3">{{tram.DisplayTime}}, {{tram.StopAreaName}} tram heading towards {{tram.Destination}}</td>
+        </tr>
+        </ng-container>
+      </tbody>
+  </table>
+  
+</div>
+<div *ngIf="tramsToWardGullmarsplan.length>0;else no_trams" >
+   <h3 class="d-flex justify-content-center"> Have a nice trip :)</h3>
+</div>
+<ng-template #no_trams>
+    <h4 class="d-flex justify-content-center p-2">There are no trams now</h4>
+</ng-template>
+</div>
+
+<ng-template #error>
+    <div class="container">
+        <div class="col-md-12">
+        <p >Oops, Somting went worng :(</p>
+    </div>
+    </div>
+</ng-template>
