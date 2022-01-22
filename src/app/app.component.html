@@ -7,7 +7,7 @@
         <ng-container *ngFor="let tram of tramsToWardGullmarsplan; let i = index">
         <tr>
           <th scope="row">{{i+1}}</th>
-          <td colspan="3">{{tram.DisplayTime!='Nu'?tram.DisplayTime:'Now'}}, {{tram.StopAreaName}} tram heading towards {{tram.Destination}}</td>
+          <td colspan="3">{{tram.DisplayTime!='Nu'?'Now':'Now'}}, {{tram.StopAreaName}} tram heading towards {{tram.Destination}}</td>
         </tr>
         </ng-container>
       </tbody>
